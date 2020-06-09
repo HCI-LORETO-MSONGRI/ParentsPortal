@@ -13,20 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home');
+
+Route::get('students', 'StudentsController@list');
+
+Route::post('students', 'StudentsController@store');
 
 Route::view('feeStatement', 'feeStatement');
 
 Route::view('feeStructure', 'feeStructure');
 
-Route::view('parent', 'parent');
+//Route::view('parent', 'parent');
 
-Route::view('student', 'student');
+//Route::view('student', 'student');
 
-Route::view('report', 'report');
+//Route::view('report', 'report');
 
-Route::view('addStudents', 'admin.addStudents'); 
+
 
 
