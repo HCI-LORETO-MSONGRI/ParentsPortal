@@ -33,7 +33,7 @@
 
 
 <div class="sidebar py-3">
-	@include('admin\nav1',['username' => 'admin']) 
+	@include('admin\nav1') 
 	
 </div>
 
