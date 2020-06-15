@@ -6,7 +6,7 @@
 
 	<title>@yield('title', 'LCM Parents Portal')</title>
 	
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" >
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
