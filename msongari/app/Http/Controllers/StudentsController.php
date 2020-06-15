@@ -7,13 +7,18 @@ use Illuminate\Http\Request;
 
 class StudentsController extends Controller
 {
-    public function list()
+
+    public function index()
     {
-    $boardingStudents = Student::where('school', 1)->get();
-     $dayStudents = Student::where('school', 0)->get();
+   $students = Student::all();
 
-	return view('admin.students', compact('boardingStudents', 'dayStudents'));
+	return view('admin.index', compact('students'));
 
+    }
+
+    public function create()
+    {
+        return view('admin.create');
     }
 
     public function store()
@@ -23,14 +28,21 @@ class StudentsController extends Controller
          'name' => 'required|min:3',
          'email' => 'required|email',
          'school' => 'required',
+         'dob' => 'required|date_format:Y-m-d',
+         
     	]);
 
-    	$student = new Student();
-    	$student->name =(request('name'));
-    	$student->email =(request('email'));
-    	$student->school =(request('school'));
-    	$student->save();
 
-    	return back();
+      Student::create($data);
+
+    	return redirect('students');
     }
+
+    public function show(Student $student)
+    {
+       
+       return view('admin.show', compact('student')); 
+    }
+
+
 }
