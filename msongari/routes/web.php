@@ -15,20 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
 
-Route::get('students', 'StudentsController@list');
-
+Route::get('students', 'StudentsController@index');
+Route::get('admin/create', 'StudentsController@create');
 Route::post('students', 'StudentsController@store');
+Route::get('students/{student}', 'StudentsController@show');
 
-Route::view('feeStatement', 'feeStatement');
+//Route::view('feeStatement', 'feeStatement');
 
-Route::view('feeStructure', 'feeStructure');
+//Route::view('feeStructure', 'feeStructure');
 
 //Route::view('parent', 'parent');
 
 //Route::view('student', 'student');
 
 //Route::view('report', 'report');
-
-
-
-
