@@ -8,6 +8,7 @@
 <div class="row">
   <div class="col-12">
     <h1>Details for {{ $student->name }}</h1>
+    <p><a href="/students/{{ $student->id }}/edit">Edit</a></p>
   </div>
 </div>
 
@@ -19,8 +20,6 @@
     <p><strong>School Type: </strong>{{ $student->school }}</p>
   </div>
 </div>
-
-
 
 
 @endsection
