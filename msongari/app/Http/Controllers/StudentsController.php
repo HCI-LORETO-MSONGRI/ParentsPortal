@@ -45,4 +45,22 @@ class StudentsController extends Controller
     }
 
 
+    public function edit(Student $student)
+    {
+      return view('admin.edit', compact('student'));
+    }
+
+    public function update(Student $student)
+    {
+       //add validation
+        $data = request()->validate([
+         'name' => 'required|min:3',
+         'email' => 'required|email',
+         'dob' => 'required|date_format:Y-m-d',
+
+         ]);
+        $student->update($data);
+
+        return redirect('students/' .$student->id);
+    }
 }
