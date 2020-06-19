@@ -19,6 +19,9 @@ Route::get('students', 'StudentsController@index');
 Route::get('admin/create', 'StudentsController@create');
 Route::post('students', 'StudentsController@store');
 Route::get('students/{student}', 'StudentsController@show');
+Route::get('students/{student}/edit', 'StudentsController@edit');
+Route::patch('students/{student}', 'StudentsController@update');
+
 
 //Route::view('feeStatement', 'feeStatement');
 
